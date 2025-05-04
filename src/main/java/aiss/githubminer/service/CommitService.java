@@ -3,6 +3,7 @@ package aiss.githubminer.service;
 
 
 
+import aiss.githubminer.Utils;
 import aiss.githubminer.model.Commit;
 import aiss.githubminer.model.commitParser.CommitParser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,51 +28,17 @@ public class CommitService {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Autowired
+    private Utils utils;
 
-//    public List<Commit> getCommits(String owner, String repo) {
-//        String uri = baseUri + owner + "/" + repo + "/commits";
-//        return getCommits(uri);
-//    }
-//    public List<Commit> getCommits(String uri){
-//        CommitParser[] commits= restTemplate.getForObject(uri , CommitParser[].class);
-//        return Arrays.stream(commits).map(x-> Commit.of()).toList();
-//    };
-//
-//    public List<Commit> getCommitsT(String owner, String repo, String token) {
-//        String uri = baseUri+owner+"/"+repo+"/commits";
-//        return getCommits(uri, token);
-//    };
-//
-//
-//
-//    public List<Commit> getCommitsT(String uri, String token){
-//        HttpHeaders headers = new HttpHeaders();
-//        // Setting tokken header
-//        headers.set("Authorization","Bearer " + token);
-//        // Send request
-//        HttpEntity<Commit[]> request = new HttpEntity<>(null, headers);
-//        ResponseEntity<Commit[]> response = restTemplate.exchange(uri, HttpMethod.GET, request, Commit[].class);
-//        return List.of(response.getBody());
-//    };
-//
-//    public List<Commit> getCommitsPag(String uri,String token,int page, int pageSize ){
-//        uri= uri+"commits?per_page="+pageSize+"&page="+page;
-//        HttpHeaders headers = new HttpHeaders();
-//        headers.set("Authorization","Bearer " + token);
-//        HttpEntity<Commit[]> request = new HttpEntity<>(null, headers);
-//        ResponseEntity<Commit[]> response = restTemplate.exchange(uri, HttpMethod.GET, request, Commit[].class);
-//        return List.of(response.getBody());
-//    }
-/*
-    public List<Commit> getAllCommits(String owner, String repo, int sinceDays, int maxPages) throws HttpClientErrorException{
-        List<Commit> commits = new ArrayList<>();
-
-        LocalDateTime since = LocalDateTime.now().minusDays(sinceDays);
-
-        String uri = baseUri + owner + "/" + repo + "/commits?since="+since;
-        logger.debug()
+    public List<Commit> getCommits(String uri) {
+        ResponseEntity<CommitParser[]> response = utils.requestWithToken(uri, CommitParser[].class);
+        //TODO: manejo de excepciones
+        List<Commit> commits = Arrays.stream(response.getBody()).map(Commit::of).toList();
+        return commits;
     }
-*/
+
+
 
 
 

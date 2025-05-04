@@ -78,16 +78,16 @@ public class Commit {
     }
 
     //TODO terminar el constructor
-//    public static Commit of(CommitParser commitData){
-//    return new Commit(
-//            commitData.getNodeId(),
-//            "titulo",
-//            commitData.getCommit().getMessage(),
-//            commitData.getCommit().getAuthor().getName(),
-//            commitData.getCommit().getAuthor().getEmail(),
-//            commitData.getCommit().getAuthor().getDate(),
-//            commitData.getCommit().getUrl()
-//    );
-//    }
+    public static Commit of(CommitParser commitData){
+    return new Commit(
+            commitData.getModelId(),
+            "titulo",
+            commitData.getModelMessage(),
+            commitData.getModelAuthorName(),
+            commitData.getModelAuthorEmail(),
+            commitData.getModelAuthoredDate(),
+            commitData.getModelUrl()
+    );
+    }
 
 }

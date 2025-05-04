@@ -1,5 +1,7 @@
 package aiss.githubminer.model;
 
+import aiss.githubminer.model.projectParser.ProjectParser;
+
 import java.util.List;
 
 public class Project {
@@ -10,6 +12,13 @@ public class Project {
     public List<Commit> commits;
     public List<Issue> issues;
 
+    public Project(String id, String name, String web_url, List<Commit> commits, List<Issue> issues) {
+        this.id = id;
+        this.name = name;
+        this.web_url = web_url;
+        this.commits = commits;
+        this.issues = issues;
+    }
 
 
     public String getId() {
@@ -52,6 +61,15 @@ public class Project {
         this.issues = issues;
     }
 
+    public static Project of(ProjectParser projectData, List<Commit> commits, List<Issue> issues){
+        return new Project(
+                projectData.getId().toString(),
+                projectData.getName(),
+                projectData.getUrl(),
+                commits,
+                issues
+        );
+    }
 
 
 }

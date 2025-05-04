@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -47,16 +48,7 @@ import org.springframework.stereotype.Component;
     "state_reason"
 })
 
-//@Component
 public class IssueParser {
-
-//    private final CommentService commentService;
-//
-//    @Autowired
-//    public IssueParser(CommentService commentService) {
-//        this.commentService = commentService;
-//    }
-
     @JsonProperty("url")
     private String url;
     @JsonProperty("repository_url")
@@ -590,9 +582,6 @@ public class IssueParser {
         return this.getReactions().getTotalCount();
     }
 
-//    public List<Comment> getCommentsList(){
-//        return commentService.getComments(this.getCommentsUrl());
-//    }
 
     public aiss.githubminer.model.User getAuthorModel() {
        User user = this.getUser();

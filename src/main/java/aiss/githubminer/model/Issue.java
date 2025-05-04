@@ -131,7 +131,7 @@ public class Issue {
     }
 
     //TODO: quizas es mejor que se llame a una funcion que busque el User correspondiente a author y assignee
-    public static Issue of(IssueParser issueData){
+    public static Issue of(IssueParser issueData, List<Comment> comments) {
         return new Issue(
                 issueData.getId().toString(),
                 issueData.getTitle(),
@@ -142,7 +142,7 @@ public class Issue {
                 issueData.getClosedAt(),
                 issueData.getLabelNames(),
                 issueData.getTotalCount(),
-                null,
+                comments,
                 issueData.getAuthorModel(),
                 null
 

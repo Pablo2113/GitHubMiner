@@ -178,4 +178,26 @@ public class CommitParser {
         return sb.toString();
     }
 
+    public String getModelId() {
+        return this.getSha();
+    }
+//    public String getModelTitle() {
+//        return this.getCommit().getMessage();
+//    }
+    public String getModelMessage() {
+        return this.getCommit().getMessage();
+    }
+    public String getModelAuthorName() {
+        return this.getCommit().getAuthor().getName();
+    }
+    public String getModelAuthorEmail() {
+        return this.getCommit().getAuthor().getEmail();
+    }
+    public String getModelAuthoredDate() {
+        return this.getCommit().getAuthor().getDate();
+    }
+    public String getModelUrl() {
+        return this.getCommit().getUrl();
+    }
+
 }
