@@ -47,15 +47,15 @@ import org.springframework.stereotype.Component;
     "state_reason"
 })
 
-@Component
+//@Component
 public class IssueParser {
 
-    private final CommentService commentService;
-
-    @Autowired
-    public IssueParser(CommentService commentService) {
-        this.commentService = commentService;
-    }
+//    private final CommentService commentService;
+//
+//    @Autowired
+//    public IssueParser(CommentService commentService) {
+//        this.commentService = commentService;
+//    }
 
     @JsonProperty("url")
     private String url;
@@ -590,9 +590,9 @@ public class IssueParser {
         return this.getReactions().getTotalCount();
     }
 
-    public List<Comment> getCommentsList(){
-        return commentService.getComments(this.getCommentsUrl());
-    }
+//    public List<Comment> getCommentsList(){
+//        return commentService.getComments(this.getCommentsUrl());
+//    }
 
     public aiss.githubminer.model.User getAuthorModel() {
        User user = this.getUser();

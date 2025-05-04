@@ -142,7 +142,7 @@ public class Issue {
                 issueData.getClosedAt(),
                 issueData.getLabelNames(),
                 issueData.getTotalCount(),
-                issueData.getCommentsList(),
+                null,
                 issueData.getAuthorModel(),
                 null
 

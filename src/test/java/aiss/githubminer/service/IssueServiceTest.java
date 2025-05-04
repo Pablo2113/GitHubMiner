@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class IssueServiceTest {
     @Autowired
-    IssueService service;
+    private IssueService service;
 
     @Test
     void getIssueFromUrl() {
