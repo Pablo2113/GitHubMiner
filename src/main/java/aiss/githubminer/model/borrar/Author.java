@@ -1,5 +1,5 @@
 
-package aiss.githubminer.model;
+package aiss.githubminer.model.borrar;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -11,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "email",
     "date"
 })
-
-public class Committer {
+public class Author {
 
     @JsonProperty("name")
     private String name;
@@ -54,7 +53,7 @@ public class Committer {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Committer.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(Author.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("name");
         sb.append('=');
         sb.append(((this.name == null)?"<null>":this.name));

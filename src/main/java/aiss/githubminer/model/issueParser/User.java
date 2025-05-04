@@ -1,5 +1,6 @@
 
-package aiss.githubminer.model;
+package aiss.githubminer.model.issueParser;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -27,7 +28,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "user_view_type",
     "site_admin"
 })
-public class Committer__1 {
+
+class User {
 
     @JsonProperty("login")
     private String login;
@@ -261,7 +263,7 @@ public class Committer__1 {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Committer__1 .class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(User.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("login");
         sb.append('=');
         sb.append(((this.login == null)?"<null>":this.login));

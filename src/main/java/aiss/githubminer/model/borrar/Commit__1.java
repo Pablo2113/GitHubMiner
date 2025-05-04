@@ -1,5 +1,5 @@
 
-package aiss.githubminer.model;
+package aiss.githubminer.model.borrar;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
