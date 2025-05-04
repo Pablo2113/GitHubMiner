@@ -81,8 +81,8 @@ public class Commit {
     public static Commit of(CommitParser commitData){
     return new Commit(
             commitData.getModelId(),
-            "titulo",
             commitData.getModelMessage(),
+            null, //No he visto ninguna propiedad que se pueda interpretar como el mensage
             commitData.getModelAuthorName(),
             commitData.getModelAuthorEmail(),
             commitData.getModelAuthoredDate(),

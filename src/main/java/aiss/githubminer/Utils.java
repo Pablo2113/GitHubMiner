@@ -25,7 +25,7 @@ public class Utils {
 
     public <K> ResponseEntity<K> requestWithToken(String uri, Class<K> classType){
         HttpHeaders headers = new HttpHeaders();
-        if(token != null){
+        if(token.length() > 0){
             headers.set("Authorization","Bearer " + token);
         }
         HttpEntity<K> request = new HttpEntity<>(null, headers);
