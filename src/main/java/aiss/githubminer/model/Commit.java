@@ -77,12 +77,11 @@ public class Commit {
         this.web_url = web_url;
     }
 
-    //TODO terminar el constructor
     public static Commit of(CommitParser commitData){
     return new Commit(
             commitData.getModelId(),
+            null, //No he visto ninguna propiedad que se pueda interpretar como el title, tambien se podria interpretar como titulo y dejar message como null
             commitData.getModelMessage(),
-            null, //No he visto ninguna propiedad que se pueda interpretar como el mensage
             commitData.getModelAuthorName(),
             commitData.getModelAuthorEmail(),
             commitData.getModelAuthoredDate(),

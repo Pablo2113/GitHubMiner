@@ -7,7 +7,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class IssueServiceTest {
@@ -17,6 +16,12 @@ class IssueServiceTest {
     @Test
     void getIssueFromUrl() {
         Issue issue = service.getIssueFromUrl("https://api.github.com/repos/twilio/twilio-csharp/issues/491");
+        System.out.println(issue);
+    }
+
+    @Test
+    void getIssueWithAsiggneeFromUrl() { //Este test solo es ejecutable si el token tiene permisos de lectura del repositorio, en el enlace hay un issue que tiene un asignee y no he econtrado más
+        Issue issue = service.getIssueFromUrl("https://api.github.com/repos/Esteban-Panes-Mendoza/GITHUBMINER/issues/3");
         System.out.println(issue);
     }
 
