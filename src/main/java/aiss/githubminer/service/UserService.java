@@ -27,7 +27,6 @@ public class UserService {
 
     public User getUserByUsername(String username){
         UserParser userData = restTemplate.getForObject(baseUri+"/users/"+username, UserParser.class);
-        //TODO: excepcion userData null
         return User.of(userData);
     }
 }

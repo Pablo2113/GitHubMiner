@@ -29,7 +29,6 @@ public class IssueService {
 
     public Issue getIssueFromUrl(String uri){
         ResponseEntity<IssueParser> response = utils.requestWithToken(uri, IssueParser.class);
-        //TODO: manejo de excepciones
         IssueParser issue = response.getBody();
         List<Comment> comments = commentService.getCommentsFromUrl(issue.getCommentsUrl()); // CommentsUrl nunca será null aunque el numero de comentaqrios sea 0
         return Issue.of(issue,comments);
@@ -37,7 +36,6 @@ public class IssueService {
 
     public List<Issue> getIssueListFromUrl(String uri) {
         ResponseEntity<IssueParser[]> response = utils.requestWithToken(uri, IssueParser[].class);
-        //TODO: manejo de excepciones
         IssueParser[] issues = response.getBody();
         List<Issue> issuesModel = new ArrayList<>();
         for (IssueParser issue: issues){

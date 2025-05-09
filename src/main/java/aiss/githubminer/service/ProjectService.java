@@ -11,13 +11,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalUnit;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -60,7 +56,6 @@ public class ProjectService {
         Integer issuePageCount = 1;
         Integer lastSize = 30;
 
-        //TODO: manejo de excepciones
         while(maxPages>=commitPageCount && lastSize == 30){
             List<Commit> commits = commitService.getCommits(projectData.getUrl()+"/commits?page="+commitPageCount+"&since="+sinceCommitsString);
             lastSize = commits.size();

@@ -57,7 +57,6 @@ public class User {
         this.web_url = web_url;
     }
 
-    //TODO obtener el username
     public static User of(UserParser userData){
         return new User(
                 userData.getId().toString(),

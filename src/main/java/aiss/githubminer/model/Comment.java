@@ -57,8 +57,6 @@ public class Comment {
         this.author = author;
     }
 
-    //Todo terminar constructor 1. hay que parsear el body para obtener solo lo que se quiere
-    // 2. hay que obtener el nombre del autor del body
     public static Comment of(CommentParser commentData) {
         String id = commentData.getId().toString();
         String body = commentData.getBody();
