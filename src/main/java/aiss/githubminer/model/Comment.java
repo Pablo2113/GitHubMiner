@@ -1,5 +1,7 @@
 package aiss.githubminer.model;
 
+import aiss.githubminer.model.commentParser.CommentParser;
+
 public class Comment {
     public String id;
     public String body;
@@ -67,9 +69,16 @@ public class Comment {
     public static Comment of(CommentParser comment) {
         String id = comment.getId().toString();
         String body = comment.getBody();
-        String created_at = comment.getCreated_at();
-        String updated_at = comment.getUpdated_at();
-        User author = comment.getAuthor();
+        String created_at = comment.getCreatedAt();
+        String updated_at = comment.getUpdatedAt();
+        User author = comment.getUserModel();
+        return new Comment(
+                id,
+                body,
+                created_at,
+                updated_at,
+                author
+        );
 
 
     }

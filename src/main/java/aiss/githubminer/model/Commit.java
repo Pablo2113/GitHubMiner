@@ -91,15 +91,15 @@ public class Commit {
         this.web_url = web_url;
     }
 
-    public static Commit of(CommitParser commitData){
+    public static Commit of(CommitParser commit){
         return new Commit(
-                commitData.getModelId(),
+                commit.getModelId(),
                 null,
-                commitData.getModelMessage(),
-                commitData.getModelAuthorName(),
-                commitData.getModelAuthorEmail(),
-                commitData.getModelAuthoredDate(),
-                commitData.getModelUrl()
+                commit.getModelMessage(),
+                commit.getModelAuthorName(),
+                commit.getModelAuthorEmail(),
+                commit.getModelAuthoredDate(),
+                commit.getModelUrl()
         );
     }
 
