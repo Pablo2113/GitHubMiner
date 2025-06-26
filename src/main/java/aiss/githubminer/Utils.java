@@ -15,7 +15,7 @@ import java.util.List;
 @Component
 public class Utils {
 
-    @Value("${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}")
+    @Value("${github_token}")
     private String token;
 
     @Autowired
