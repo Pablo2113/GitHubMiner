@@ -8,13 +8,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "author",
-        "committer",
-        "message",
-        "tree",
-        "url",
-        "comment_count",
-        "verification"
+    "author",
+    "committer",
+    "message",
+    "tree",
+    "url",
+    "comment_count",
+    "verification"
 })
 
 class Commit__2 {

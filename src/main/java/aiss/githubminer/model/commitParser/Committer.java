@@ -8,9 +8,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "name",
-        "email",
-        "date"
+    "name",
+    "email",
+    "date"
 })
 
 class Committer {

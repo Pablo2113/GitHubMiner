@@ -8,11 +8,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "url",
-        "html_url",
-        "diff_url",
-        "patch_url",
-        "merged_at"
+    "url",
+    "html_url",
+    "diff_url",
+    "patch_url",
+    "merged_at"
 })
 
 class PullRequest {

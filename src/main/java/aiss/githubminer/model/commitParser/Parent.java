@@ -8,9 +8,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "sha",
-        "url",
-        "html_url"
+    "sha",
+    "url",
+    "html_url"
 })
 
 class Parent {

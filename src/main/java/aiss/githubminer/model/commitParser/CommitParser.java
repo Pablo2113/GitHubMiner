@@ -8,15 +8,15 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "sha",
-        "node_id",
-        "commit",
-        "url",
-        "html_url",
-        "comments_url",
-        "author",
-        "committer",
-        "parents"
+    "sha",
+    "node_id",
+    "commit",
+    "url",
+    "html_url",
+    "comments_url",
+    "author",
+    "committer",
+    "parents"
 })
 
 public class CommitParser {
@@ -181,7 +181,7 @@ public class CommitParser {
     public String getModelId() {
         return this.getSha();
     }
-    //    public String getModelTitle() {
+//    public String getModelTitle() {
 //        return this.getCommit().getMessage();
 //    }
     public String getModelMessage() {
@@ -198,6 +198,14 @@ public class CommitParser {
     }
     public String getModelUrl() {
         return this.getCommit().getUrl();
+    }
+
+    public String getModelHtmlUrl() {
+        return this.getHtmlUrl();
+    }
+
+    public String getModelCommentsUrl() {
+        return this.getCommentsUrl();
     }
 
 }

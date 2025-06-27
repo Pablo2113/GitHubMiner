@@ -8,15 +8,15 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "url",
-        "total_count",
-        "+1",
-        "laugh",
-        "hooray",
-        "confused",
-        "heart",
-        "rocket",
-        "eyes"
+    "url",
+    "total_count",
+    "+1",
+    "laugh",
+    "hooray",
+    "confused",
+    "heart",
+    "rocket",
+    "eyes"
 })
 
 class Reactions {

@@ -8,11 +8,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "verified",
-        "reason",
-        "signature",
-        "payload",
-        "verified_at"
+    "verified",
+    "reason",
+    "signature",
+    "payload",
+    "verified_at"
 })
 
 class Verification {

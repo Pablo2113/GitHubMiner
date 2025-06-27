@@ -8,8 +8,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "sha",
-        "url"
+    "sha",
+    "url"
 })
 
 class Tree {

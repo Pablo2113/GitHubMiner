@@ -8,13 +8,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "id",
-        "node_id",
-        "url",
-        "name",
-        "color",
-        "default",
-        "description"
+    "id",
+    "node_id",
+    "url",
+    "name",
+    "color",
+    "default",
+    "description"
 })
 
 class Label {
