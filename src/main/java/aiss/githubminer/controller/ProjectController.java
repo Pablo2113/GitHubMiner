@@ -11,10 +11,17 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 
 @RestController
 @RequestMapping("/gitgub")
 public class ProjectController {
+
+    private static final Logger log = LoggerFactory.getLogger(ProjectController.class);
+
 
     @Autowired
     ProjectService projectService;
@@ -33,7 +40,9 @@ public class ProjectController {
                               @PathVariable String repo) {
     String url = "https://api.github.com/repos/" + owner + "/" + repo;
     Project project = projectService.getProjectUrl( url, Integer.parseInt(sinceCommits), Integer.parseInt(sinceIssues), Integer.parseInt(maxPages));
+        log.info("Project retrieved: {}", project.getId()); //log
     return project;
+
     }
 
     @ResponseStatus(HttpStatus.CREATED)
@@ -45,10 +54,13 @@ public class ProjectController {
                                  @PathVariable String repo){
         String url = "https://api.github.com/repos/" + owner + "/" + repo;
         Project project = projectService.getProjectUrl(url, Integer.parseInt(sinceCommits), Integer.parseInt(sinceIssues), Integer.parseInt(maxPages));
+        log.info("Sending project to GitMiner: {}", project.getId()); //log
+
         HttpHeaders headers = new HttpHeaders();
 
         HttpEntity<Project> entity = new HttpEntity<>(project, headers);
         ResponseEntity<Project> response = restTemplate.postForEntity(uri, entity, Project.class);
+        log.info("Response from GitMiner: {}", response.getStatusCode());  //log
         return response.getBody();
 
     }
