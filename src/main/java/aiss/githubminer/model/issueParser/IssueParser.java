@@ -4,6 +4,7 @@ package aiss.githubminer.model.issueParser;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
@@ -577,6 +578,9 @@ public class IssueParser {
         return this.getReactions().getTotalCount();
     }
 
+    @Autowired
+    aiss.githubminer.model.User userr;
+
 
     public aiss.githubminer.model.User getAuthorModel() {
         User user = this.getUser();
@@ -586,7 +590,9 @@ public class IssueParser {
                 user.getLogin(),
                 null, //La propiedad autor no tiene nombre cuando es propiedad de un Issue
                 user.getAvatarUrl(),
-                user.getUrl()
+                user.getUrl(),
+                user.getHtmlUrl(),
+                userr.getFollowers()
         );
     }
 
@@ -599,7 +605,10 @@ public class IssueParser {
                 user.getLogin(),
                 null, //La propiedad autor no tiene nombre cuando es propiedad de un Issue
                 user.getAvatarUrl(),
-                user.getUrl()
+                user.getUrl(),
+                user.getHtmlUrl(),
+                userr.getFollowers()
+
         );
     }
 }
