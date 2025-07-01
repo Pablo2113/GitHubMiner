@@ -80,34 +80,7 @@ class PullRequest {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(PullRequest.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
-        sb.append("url");
-        sb.append('=');
-        sb.append(((this.url == null)?"<null>":this.url));
-        sb.append(',');
-        sb.append("htmlUrl");
-        sb.append('=');
-        sb.append(((this.htmlUrl == null)?"<null>":this.htmlUrl));
-        sb.append(',');
-        sb.append("diffUrl");
-        sb.append('=');
-        sb.append(((this.diffUrl == null)?"<null>":this.diffUrl));
-        sb.append(',');
-        sb.append("patchUrl");
-        sb.append('=');
-        sb.append(((this.patchUrl == null)?"<null>":this.patchUrl));
-        sb.append(',');
-        sb.append("mergedAt");
-        sb.append('=');
-        sb.append(((this.mergedAt == null)?"<null>":this.mergedAt));
-        sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
-        } else {
-            sb.append(']');
-        }
-        return sb.toString();
+        return "CommentParser{}";
     }
 
 }

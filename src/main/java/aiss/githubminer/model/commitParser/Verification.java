@@ -80,34 +80,6 @@ class Verification {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(Verification.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
-        sb.append("verified");
-        sb.append('=');
-        sb.append(((this.verified == null)?"<null>":this.verified));
-        sb.append(',');
-        sb.append("reason");
-        sb.append('=');
-        sb.append(((this.reason == null)?"<null>":this.reason));
-        sb.append(',');
-        sb.append("signature");
-        sb.append('=');
-        sb.append(((this.signature == null)?"<null>":this.signature));
-        sb.append(',');
-        sb.append("payload");
-        sb.append('=');
-        sb.append(((this.payload == null)?"<null>":this.payload));
-        sb.append(',');
-        sb.append("verifiedAt");
-        sb.append('=');
-        sb.append(((this.verifiedAt == null)?"<null>":this.verifiedAt));
-        sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
-        } else {
-            sb.append(']');
-        }
-        return sb.toString();
+        return "CommentParser{}";
     }
-
 }

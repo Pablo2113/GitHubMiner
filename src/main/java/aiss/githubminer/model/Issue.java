@@ -1,11 +1,16 @@
 package aiss.githubminer.model;
 
 import aiss.githubminer.model.issueParser.IssueParser;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.OneToMany;
 
 import java.util.List;
 
 public class Issue {
+
     public String id;
     public String title;
     public String description;
@@ -15,6 +20,9 @@ public class Issue {
     public String closed_at;
     public List<String> labels;
     public Integer votes;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @JsonManagedReference
     public List<Comment> comments;
     public User author;
     public User assignee;

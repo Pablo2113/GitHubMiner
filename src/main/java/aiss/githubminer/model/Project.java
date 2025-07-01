@@ -1,7 +1,10 @@
 package aiss.githubminer.model;
 
 import aiss.githubminer.model.projectParser.ProjectParser;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.OneToMany;
 
 import java.util.List;
 
@@ -12,7 +15,11 @@ public class Project {
         public String htmlUrl;
         public Integer stargazersCount;
 
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
         public List<Commit> commits;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
         public List<Issue> issues;
 
         public Project(String id, String name, String web_url, String htmlUrl, Integer stargazersCount ,List<Commit> commits, List<Issue> issues) {

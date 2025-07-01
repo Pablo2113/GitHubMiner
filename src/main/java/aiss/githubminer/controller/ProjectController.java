@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 
 
 @RestController
-@RequestMapping("/gitgub")
+@RequestMapping("/github")
 public class ProjectController {
 
     private static final Logger log = LoggerFactory.getLogger(ProjectController.class);
@@ -29,7 +29,7 @@ public class ProjectController {
     @Autowired
     RestTemplate restTemplate;
 
-    @Value("&{gitminer_uri}")
+    @Value("${gitminer_uri}")
     private String uri;
 
     @GetMapping("/{owner}/{repo}")

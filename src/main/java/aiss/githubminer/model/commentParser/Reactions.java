@@ -132,50 +132,7 @@ class Reactions {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(Reactions.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
-        sb.append("url");
-        sb.append('=');
-        sb.append(((this.url == null)?"<null>":this.url));
-        sb.append(',');
-        sb.append("totalCount");
-        sb.append('=');
-        sb.append(((this.totalCount == null)?"<null>":this.totalCount));
-        sb.append(',');
-        sb.append("_1");
-        sb.append('=');
-        sb.append(((this._1 == null)?"<null>":this._1));
-        sb.append(',');
-        sb.append("laugh");
-        sb.append('=');
-        sb.append(((this.laugh == null)?"<null>":this.laugh));
-        sb.append(',');
-        sb.append("hooray");
-        sb.append('=');
-        sb.append(((this.hooray == null)?"<null>":this.hooray));
-        sb.append(',');
-        sb.append("confused");
-        sb.append('=');
-        sb.append(((this.confused == null)?"<null>":this.confused));
-        sb.append(',');
-        sb.append("heart");
-        sb.append('=');
-        sb.append(((this.heart == null)?"<null>":this.heart));
-        sb.append(',');
-        sb.append("rocket");
-        sb.append('=');
-        sb.append(((this.rocket == null)?"<null>":this.rocket));
-        sb.append(',');
-        sb.append("eyes");
-        sb.append('=');
-        sb.append(((this.eyes == null)?"<null>":this.eyes));
-        sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
-        } else {
-            sb.append(']');
-        }
-        return sb.toString();
+        return "CommentParser{}";
     }
 
 }

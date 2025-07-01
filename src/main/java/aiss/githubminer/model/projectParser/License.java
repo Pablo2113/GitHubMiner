@@ -80,34 +80,7 @@ class License {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(License.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
-        sb.append("key");
-        sb.append('=');
-        sb.append(((this.key == null)?"<null>":this.key));
-        sb.append(',');
-        sb.append("name");
-        sb.append('=');
-        sb.append(((this.name == null)?"<null>":this.name));
-        sb.append(',');
-        sb.append("spdxId");
-        sb.append('=');
-        sb.append(((this.spdxId == null)?"<null>":this.spdxId));
-        sb.append(',');
-        sb.append("url");
-        sb.append('=');
-        sb.append(((this.url == null)?"<null>":this.url));
-        sb.append(',');
-        sb.append("nodeId");
-        sb.append('=');
-        sb.append(((this.nodeId == null)?"<null>":this.nodeId));
-        sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
-        } else {
-            sb.append(']');
-        }
-        return sb.toString();
+        return "CommentParser{}";
     }
 
 }
